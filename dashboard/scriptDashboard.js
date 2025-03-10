@@ -34,8 +34,3 @@ user.addEventListener('click',()=>{
         logout.style.display = "none";
     }
 })
-
-
-function redirect(){
-    window.location.href = "/index/index.html"
-}

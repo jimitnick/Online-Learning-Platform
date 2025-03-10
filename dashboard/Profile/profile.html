@@ -11,27 +11,77 @@
     <div id="main">
         <div id="one">
             <div id="top">
-                <!-- icon -->
                  <h2>EduPrep</h2>
                  <p>Enhance Your Learning</p>
             </div>
             <div id="mid">
-                <li><a href="/dashboard/dashboard.html"><i class="ri-dashboard-line"></i> Dashboard </a></li>
-                <li><a href="/dashboard/course/course.html" ><i class="ri-book-fill"></i> Course </a></li>
-                <li><a href=""><i class="ri-bookmark-2-line"></i> Resources </a></li>
+                <li><a href="../dashboard.html"><i class="ri-dashboard-line"></i> Dashboard </a></li>
+                <li><a href="../course/course.html" ><i class="ri-book-fill"></i> Course </a></li>
+                <li><a href="../Resources/resources.html"><i class="ri-bookmark-2-line"></i> Resources </a></li>
                 <li><a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/04/11/20250104111047-0QN1GDG1.json"><i class="ri-chat-1-line"></i> Chat </a></li>
-                <li><a href=""><i class="ri-calendar-todo-fill"></i> Schedule </a></li>
-                <li><a href="/dashboard/Profile/profile.html"><i class="ri-user-6-fill"></i> Profile </a></li>
-                <li><a href="/dashboard/settings/settings.html"><i class="ri-settings-line"></i> Settings </a></li>
+                <li><a href="../Schedule/schedule.html"><i class="ri-calendar-todo-fill"></i> Schedule </a></li>
+                <li><a href="../Profile/profile.html" class="active"><i class="ri-user-6-fill"></i> Profile </a></li>
+                <li><a href="../settings/settings.html"><i class="ri-settings-line"></i> Settings </a></li>
             </div>
             <div id="btm">
-                <!-- image -->
                  <p>Upgrade to Pro for</p>
                  <p>more resources</p>
-                 <button id="upgrade"><a href="/upgrade/upgrade.html" style="text-decoration: none;color: #fff;">Upgrage Now</a></button>
+                 <button id="upgrade">Upgrade Now</button>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile-section">
+            <div id="profile-header">
+                <h2>Your Profile</h2>
+            </div>
+            <div id="profile-content">
+                <div id="profile-pic">
+                    <img src="Phi.png" alt="Profile Picture">
+                </div>
+                <div id="profile-info">
+                    <h3>John Doe</h3>
+                    <p><i class="ri-mail-line"></i> john.doe@example.com</p>
+                    <p><i class="ri-phone-line"></i> +1 234 567 890</p>
+                    <p><i class="ri-map-pin-line"></i> New York, USA</p>
+                    <p><i class="ri-user-line"></i> Passionate about online learning and technology.</p>
+                    <button id="edit-profile">Edit Profile</button>
+                </div>
+            </div>
+
+            <!-- Achievements & Progress -->
+            <div id="achievements">
+                <h3>Achievements</h3>
+                <div class="badges">
+                    <span class="badge">🏆 Top Learner</span>
+                    <span class="badge">📚 10 Courses Completed</span>
+                    <span class="badge">🌟 5-Star Reviews</span>
+                </div>
+            </div>
+
+            <div id="progress">
+                <h3>Course Progress</h3>
+                <p>Python for Beginners: <span class="progress-bar"><span style="width: 80%;"></span></span> 80%</p>
+                <p>Data Science 101: <span class="progress-bar"><span style="width: 60%;"></span></span> 60%</p>
+            </div>
+
+            <!-- Account Settings -->
+            <div id="account-settings">
+                <h3>Account Settings</h3>
+                <button class="settings-btn">Change Password</button>
+                <button class="settings-btn">Manage Notifications</button>
+            </div>
+
+            <!-- Social Links -->
+            <div id="social-links">
+                <h3>Connect</h3>
+                <a href="#"><i class="ri-linkedin-box-fill"></i> LinkedIn</a>
+                <a href="#"><i class="ri-github-fill"></i> GitHub</a>
+                <a href="#"><i class="ri-twitter-fill"></i> Twitter</a>
             </div>
         </div>
     </div>
+
     <script src="scriptProfile.js"></script>
 </body>
 </html>

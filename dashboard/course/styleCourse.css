@@ -101,7 +101,29 @@ html,body{
     width: 100%;
     height: 16em;
     justify-content: space-evenly;
+
+
 }
+
+#main #two .subjects.one{
+    background-color: #9de7f3;
+}
+#main #two .subjects.two{
+    background-color: #f39d9d;
+}
+#main #two .subjects.three{
+    background-color: #f3c29d;
+}
+#main #two .subjects.four{
+    background-color: #e6f39d;
+}
+#main #two .subjects.five{
+    background-color: #a4f39d;
+}
+#main #two .subjects.six{
+    background-color: #ea9df3;
+}
+
 #main #two .subjects #One i{
     font-size: 1.2em;
     cursor: pointer;
@@ -188,6 +210,42 @@ html,body{
     border-radius: 20px;
     padding: 10px;
     color: #222;
+}
+.courseContent.one{
+    background-color:rgb(157, 231, 243);
+}
+.courseContent.two{
+    background-color:rgb(243, 157, 157);
+}
+.courseContent.three{
+    background-color:rgb(243, 194, 157);
+}
+.courseContent.four{
+    background-color:rgb(230, 243, 157);
+}
+.courseContent.five{
+    background-color:rgb(164, 243, 157);
+}
+.courseContent.six{
+    background-color:rgb(234, 157, 243);
+}
+.courseContent.one #mid{
+    background-color:rgb(200, 300, 300);
+}
+.courseContent.two #mid{
+    background-color:rgb(300, 200, 200);
+}
+.courseContent.three #mid{
+    background-color:rgb(250, 200, 180);
+}
+.courseContent.four #mid{
+    background-color:rgb(250, 280, 180);
+}
+.courseContent.five #mid{
+    background-color:rgb(180, 280, 180);
+}
+.courseContent.six #mid{
+    background-color:rgb(250, 180, 280);
 }
 .courseContent #mid #lessons{
     border-right: solid 1px #fff;

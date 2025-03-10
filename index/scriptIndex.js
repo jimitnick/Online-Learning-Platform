@@ -4,7 +4,7 @@ const names = document.querySelectorAll("#Name");
 const dob = document.querySelectorAll("#dob");
 const email = document.querySelectorAll("#email");
 const submitBtn = document.querySelector("#submit");
-
+dets = {};
 signUpBtn.addEventListener("click",()=>{
     names.forEach((elem)=>{
         elem.style.display = "block";
@@ -30,57 +30,13 @@ loginBtn.addEventListener("click",()=>{
     })
     submitBtn.textContent = "Login";
 })
-function check() {
-    let userDets = new Array(); 
-    var form = document.querySelector(".Form");
-    
-    form.addEventListener('submit',(event)=>{
-        // localStorage.clear();
-        event.preventDefault();
-        if (submitBtn.textContent == "Sign Up"){
-            var name = document.querySelector(".name").value;
-            var email = document.querySelector(".email").value;
-            var dob = document.querySelector(".dob").value;
-            var username = document.querySelector(".username").value;
-            var password = document.querySelector(".passwd").value;
-            userDets = JSON.parse(localStorage.getItem("UserDetails")) ? JSON.parse(localStorage.getItem("UserDetails")) : [];
-            if (userDets.some((v)=>{
-                return v.username === username;
-            })){
-                alert("Duplicate Username");
-            }else{
-                let dets = {
-                    "name" : name,
-                    "passwd" : password,
-                    "email" : email,
-                    "dob" : dob,
-                    "username" : username
-                }
-                userDets.push(dets);
-                localStorage.setItem("UserDetails",JSON.stringify(userDets));
-                window.location.href = "";
-            }
-            document.querySelector(".name").value = "";
-            document.querySelector(".email").value = "";
-            document.querySelector(".dob").value = "";
-            document.querySelector(".username").value = "";
-            document.querySelector(".passwd").value = "";
-
-        }
-        
-        else{
-            let userData = JSON.parse(localStorage.getItem("UserDetails"));
-            var username = document.querySelector(".username").value;
-            var password = document.querySelector(".passwd").value;
-            userData.forEach((elem)=>{
-                if (elem.username == username && elem.passwd == password) {
-                    window.location.href = "../dashboard/dashboard.html";
-                    console.log("clicked");
-                    
-                }
-            })
-        }
-    })
-}
-
+submitBtn.addEventListener('click',()=>{
+    dets["name"]  = `${document.querySelector("#loginPage #left form .name").value}`;
+    dets["email"] = `${document.querySelector("#loginPage #left form .email").value}`;
+    dets["dob"] = `${document.querySelector("#loginPage #left form .dob").value}`;
+    dets["username"] = `${document.querySelector("#loginPage #left form #username").value}`;
+    dets["password"] = `${document.querySelector("#loginPage #left form #passwd").value}`;
+    localStorage.setItem("details",JSON.stringify(dets));
+})
+// local storage
 
