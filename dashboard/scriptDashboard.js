@@ -9,6 +9,10 @@ const user = document.querySelector("#main #three #login #photo i");
 var month = date.getMonth(); 
 monthfield.textContent = months[month];
 datefield.textContent = date.toDateString();
+
+document.querySelectorAll(".Username").forEach(elem =>{
+    elem.textContent = localStorage.getItem("Current User");
+})
 next.addEventListener('click',()=>{
     month ++;
     if (month > months.length){
