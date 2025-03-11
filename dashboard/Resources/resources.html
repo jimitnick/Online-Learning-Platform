@@ -30,7 +30,7 @@
             <div id="btm">
                 <p>Upgrade to Pro for</p>
                 <p>more resources</p>
-                <button id="upgrade">Upgrade Now</button>
+                <button id="upgrade" onclick="redirect()">Upgrade Now</button>
             </div>
         </div>
         <br>
@@ -108,6 +108,11 @@
     </div>
 
     <script src="scriptProfile.js"></script>
+    <script>
+        function redirect(){
+            window.location.href = "/upgrade/upgrade.html"
+        }
+    </script>
 </body>
 
 </html>

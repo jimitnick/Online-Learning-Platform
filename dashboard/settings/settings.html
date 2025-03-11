@@ -33,7 +33,7 @@
                 <!-- image -->
                  <p>Upgrade to Pro for</p>
                  <p>more resources</p>
-                 <button id="upgrade">Upgrage Now</button>
+                 <button id="upgrade" onclick="redirect()">Upgrage Now</button>
             </div>
         </div>
         <div id="second">
@@ -192,6 +192,11 @@
                     }, 3000);
                 });
         });
+    </script>
+    <script>
+        function redirect(){
+            window.location.href = "/upgrade/upgrade.html"
+        }
     </script>
 </body>
 </html>
