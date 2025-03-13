@@ -47,8 +47,9 @@ function check() {
             if (userDets.some((v)=>{
                 return v.username === username;
             })){
-                alert("Duplicate Username");
-            }else{
+                // alert("Duplicate Username");
+            }
+            else if (name != "" && email != "" && dob != "" && username != "" && password != ""){
                 let dets = {
                     "name" : name,
                     "passwd" : password,
