@@ -95,4 +95,9 @@ editBtn.addEventListener('click', () => {
         console.log(files);
     };
     input.click();
-});  
+}); 
+
+document.querySelector(".username").textContent = localStorage.getItem("Current User")
+document.querySelector(".email").textContent = localStorage.getItem("Current User Email")
+document.querySelector(".mobile").textContent = JSON.parse(localStorage.getItem("userProfileDets")).mobile
+
