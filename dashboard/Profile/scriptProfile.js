@@ -6,16 +6,22 @@ document.querySelectorAll(".Email").forEach(elem =>{
 })
 
 let Dets = JSON.parse(localStorage.getItem("userProfileDets"));
+var mobileNumber;
+var locationDets;
+var BioDets;
 [Dets].forEach((dets)=>{
+    mobileNumber = dets.mobile
+    locationDets = dets.Location
+    BioDets = dets.Bio
     document.querySelector("#phone").textContent = dets.mobile;
     document.querySelector("#location").textContent = dets.Location;
     document.querySelector("#bio").textContent = dets.Bio;
 })
 
 document.querySelector("#edit-profile").addEventListener('click',()=>{
-    var phone = confirm("Do you want to change the phone number ?") ? prompt("Enter the new phone number : ") : "xxxx-xxx-xxx";
-    var location = confirm("Do you want to change the location ?") ? prompt("Enter the new location : ") : "Add Your Location";
-    var bio = confirm("Do you want to change the bio ?") ? prompt("Enter the new bio : ") : "Add Bio";
+    var phone = confirm("Do you want to change the phone number ?") ? prompt("Enter the new phone number : ") : mobileNumber;
+    var location = confirm("Do you want to change the location ?") ? prompt("Enter the new location : ") : locationDets;
+    var bio = confirm("Do you want to change the bio ?") ? prompt("Enter the new bio : ") : BioDets;
 
     document.querySelector("#phone").textContent = phone;
     document.querySelector("#location").textContent = location;
