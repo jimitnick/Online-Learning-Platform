@@ -111,13 +111,19 @@ html,body{
 #AddTask{
     position: sticky;
 }
+#content{
+    overflow-y: auto;
+}
 #inputArea{
+    position: sticky;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-top: 10px;
+    top: 10px;
+    overflow: hidden;
+    z-index: 1;
 }
 #wiki-links {
     margin-bottom: 0px;
