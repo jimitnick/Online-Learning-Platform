@@ -73,19 +73,14 @@ function check() {
             let userData = JSON.parse(localStorage.getItem("UserDetails"));
             var username = document.querySelector(".username").value;
             var password = document.querySelector(".passwd").value;
-            let userProfileDets = new Array();
-            userProfileDets = {
+            let userProfileDets = {
                 mobile : "xxxx-xxx-xxx",
                 Location : "Add your Location",
                 Bio : "Add Bio"
             }
             localStorage.setItem("userProfileDets",JSON.stringify(userProfileDets))
-            let Dets = JSON.parse(localStorage.getItem("userProfileDets"));
-            [Dets].forEach((dets)=>{
-                document.querySelector("#phone").textContent = dets.mobile;
-                document.querySelector("#location").textContent = dets.Location;
-                document.querySelector("#bio").textContent = dets.Bio;
-            })
+            
+            
             
             userData.forEach((elem)=>{
                 if (elem.username == username && elem.passwd == password) {

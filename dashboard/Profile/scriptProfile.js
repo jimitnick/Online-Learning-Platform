@@ -4,8 +4,10 @@ document.querySelectorAll(".Username").forEach(elem =>{
 document.querySelectorAll(".Email").forEach(elem =>{
     elem.textContent = localStorage.getItem("Current User Email");
 })
-
-let Dets = JSON.parse(localStorage.getItem("userProfileDets"));
+let Dets = JSON.parse(localStorage.getItem("userProfileDets"));            
+document.querySelector("#phone").textContent = Dets["mobile"];
+document.querySelector("#location").textContent = Dets["Location"];
+document.querySelector("#bio").textContent = Dets["Bio"];
 var mobileNumber;
 var locationDets;
 var BioDets;
