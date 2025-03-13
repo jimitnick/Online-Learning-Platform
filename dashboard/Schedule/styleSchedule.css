@@ -41,6 +41,7 @@ html,body{
     height: 100%;
     background-color: black;
     border: solid 2px #2D7BB2;
+    text-align: center;
 }
 #main th,td{
     width: calc(100% / 7);
@@ -52,6 +53,9 @@ html,body{
 #main th{
     font-weight: bold;
     font-size: larger;
+}
+#main td:hover{
+    background-color: #294960;
 }
 #main #one #mid{
     display: flex;

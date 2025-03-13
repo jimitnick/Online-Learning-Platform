@@ -10,6 +10,74 @@
 </head>
 
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let todoList = document.getElementById("todo-list-true");
+
+            // Create input field and button
+            let inputField = document.createElement("input");
+            inputField.type = "text";
+            inputField.placeholder = "Add a new task...";
+            inputField.style.padding = "8px";
+            inputField.style.marginRight = "10px";
+            inputField.style.borderRadius = "5px";
+            inputField.style.border = "1px solid #2D7CB3";
+
+            let addButton = document.createElement("button");
+            addButton.innerText = "Add Task";
+            addButton.style.padding = "8px 12px";
+            addButton.style.backgroundColor = "#2D7CB3";
+            addButton.style.color = "#fff";
+            addButton.style.border = "none";
+            addButton.style.borderRadius = "5px";
+            addButton.style.cursor = "pointer";
+
+            // Add input and button above the table
+            todoList.insertBefore(inputField, todoList.firstChild);
+            todoList.insertBefore(addButton, inputField.nextSibling);
+
+            // Handle adding tasks
+            function addTask() {
+                let taskText = inputField.value.trim();
+                if (taskText !== "") {
+                    let newTask = document.createElement("li");
+                    newTask.innerHTML = `<input type="checkbox"> ${taskText}`;
+
+                    // Add click event to remove task
+                    newTask.addEventListener("click", function () {
+                        this.remove();
+                    });
+
+                    // Find the first available <ul> to add the new task
+                    let taskLists = document.querySelectorAll("#todo-list ul");
+                    if (taskLists.length > 0) {
+                        taskLists[0].appendChild(newTask);
+                    }
+
+                    // Clear input field
+                    inputField.value = "";
+                }
+            }
+
+            // Handle adding tasks on button click
+            addButton.addEventListener("click", addTask);
+
+            // Handle adding tasks when pressing Enter
+            inputField.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent form submission if inside a form
+                    addTask();
+                }
+            });
+
+            let existingTasks = document.querySelectorAll("#todo-list li");
+            existingTasks.forEach(task => {
+                task.addEventListener("click", function () {
+                    this.remove();
+                });
+            });
+        });
+    </script>
     <div id="main">
         <div id="one">
             <div id="top">
@@ -37,46 +105,14 @@
         <div id="sidebar-right">
             <div id="todo-list">
                 <h3>To-Do List</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li><input type="checkbox"> Complete Assignment</li>
-                                <li><input type="checkbox"> Watch Lecture Videos</li>
-                                <li><input type="checkbox"> Revise Notes</li>
-                                <li><input type="checkbox"> Attempt Quiz</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li><input type="checkbox"> Read Research Paper</li>
-                                <li><input type="checkbox"> Practice Coding Problems</li>
-                                <li><input type="checkbox"> Attend Live Webinar</li>
-                                <li><input type="checkbox"> Write a Summary of Today’s Learning</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li><input type="checkbox"> Submit Project Proposal</li>
-                                <li><input type="checkbox"> Discuss Doubts with Peers</li>
-                                <li><input type="checkbox"> Update Study Plan</li>
-                                <li><input type="checkbox"> Take a Mock Test</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li><input type="checkbox"> Organize Study Materials</li>
-                                <li><input type="checkbox"> Write a Blog Post on Learning</li>
-                                <li><input type="checkbox"> Review Past Mistakes in Assignments</li>
-                                <li><input type="checkbox"> Take a Break & Relax</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
+
+                <ul id="todo-list-true">
+                    <li><input type="checkbox"> Complete Assignment</li>
+                    <li><input type="checkbox"> Watch Lecture Videos</li>
+                    <li><input type="checkbox"> Revise Notes</li>
+                    <li><input type="checkbox"> Attempt Quiz</li>
+                </ul>
+
 
             </div>
 
@@ -91,16 +127,6 @@
                     </li>
                     <li><a href="https://en.wikipedia.org/wiki/Blended_learning" target="_blank">Blended Learning</a>
                     </li>
-                    <li><a href="https://en.wikipedia.org/wiki/Distance_education" target="_blank">Distance
-                            Education</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Open_educational_resources" target="_blank">Open
-                            Educational Resources</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Learning_management_system" target="_blank">Learning
-                            Management System (LMS)</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Artificial_intelligence_in_education" target="_blank">AI
-                            in Education</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Educational_data_mining" target="_blank">Educational Data
-                            Mining</a></li>
                 </ul>
             </div>
 
@@ -109,7 +135,7 @@
 
     <script src="scriptProfile.js"></script>
     <script>
-        function redirect(){
+        function redirect() {
             window.location.href = "/upgrade/upgrade.html"
         }
     </script>

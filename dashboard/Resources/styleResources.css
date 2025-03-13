@@ -86,9 +86,12 @@ html,body{
         color: #2D7CB3;
     }
 }
+#todo-list{
+    height: 500px;
+}
 #todo-list, #wiki-links {
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-top: 10px;
     width: 1000px;
     padding: 15px;
     background-color: #F8FAFD;
