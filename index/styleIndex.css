@@ -118,7 +118,7 @@ html,body{
 #loginPage #left form label{
     font-size: 0.84em;
     letter-spacing: 1.6px;
-    font-weight: 800;
+    font-weight: 500;
 }
 #loginPage #left form input:focus{
     outline: none;
