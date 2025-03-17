@@ -13,6 +13,15 @@ datefield.textContent = date.toDateString();
 document.querySelectorAll(".Username").forEach(elem =>{
     elem.textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).name;
 })
+
+var Dets = JSON.parse(localStorage.getItem("UserDetails"));
+var currUser = JSON.parse(localStorage.getItem("CurrentLoggedInUser"));
+for (var i =0;i<Dets.length;i++){
+    if (Dets[i].username == currUser.username && Dets[i].passwd == currUser.passwd){
+        document.querySelector(".Class").textContent = Dets[i].class;
+    }
+}
+
 next.addEventListener('click',()=>{
     month ++;
     if (month > months.length){
