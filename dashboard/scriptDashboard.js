@@ -11,7 +11,7 @@ monthfield.textContent = months[month];
 datefield.textContent = date.toDateString();
 
 document.querySelectorAll(".Username").forEach(elem =>{
-    elem.textContent = localStorage.getItem("Current User");
+    elem.textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).name;
 })
 next.addEventListener('click',()=>{
     month ++;

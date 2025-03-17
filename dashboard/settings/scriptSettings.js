@@ -97,7 +97,14 @@ editBtn.addEventListener('click', () => {
     input.click();
 }); 
 
-document.querySelector(".username").textContent = localStorage.getItem("Current User")
-document.querySelector(".email").textContent = localStorage.getItem("Current User Email")
-document.querySelector(".mobile").textContent = JSON.parse(localStorage.getItem("userProfileDets")).mobile
+document.querySelector(".username").textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).name
+document.querySelector(".email").textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).email
+var Dets = JSON.parse(localStorage.getItem("UserDetails"));
+var currUser = JSON.parse(localStorage.getItem("CurrentLoggedInUser"));
+for (var i =0;i<Dets.length;i++){
+    if (Dets[i].username == currUser.username && Dets[i].passwd == currUser.passwd){
+        document.querySelector(".mobile").textContent = Dets[i].phone;
+        document.querySelector(".Class").textContent = Dets[i].class;   
+    }
+}
 

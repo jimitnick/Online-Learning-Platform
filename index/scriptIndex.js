@@ -59,7 +59,14 @@ function check() {
                 }
                 userDets.push(dets);
                 localStorage.setItem("UserDetails",JSON.stringify(userDets));
-                window.location.href = "";
+                var loggedInUserDets = {
+                    "username" : username,
+                    "passwd" : password,
+                    "email" : email,
+                    "name" : name
+                }
+                localStorage.setItem("CurrentLoggedInUser",JSON.stringify(loggedInUserDets));
+                window.location.href = "../dashboard/MoreDetails/MoreDets.html";
             }
             document.querySelector(".name").value = "";
             document.querySelector(".email").value = "";
@@ -84,7 +91,7 @@ function check() {
             
             userData.forEach((elem)=>{
                 if (elem.username == username && elem.passwd == password) {
-                    window.location.href = "../dashboard/dashboard.html";
+                    window.location.href = "/dashboard/dashboard.html";
                     console.log("clicked");
                     localStorage.setItem("Current User",elem.name);
                     localStorage.setItem("Current User Email",elem.email);

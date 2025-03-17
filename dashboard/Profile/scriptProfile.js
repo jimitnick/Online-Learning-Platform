@@ -1,24 +1,31 @@
 document.querySelectorAll(".Username").forEach(elem =>{
-    elem.textContent = localStorage.getItem("Current User");
+    elem.textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).name;
 })
 document.querySelectorAll(".Email").forEach(elem =>{
-    elem.textContent = localStorage.getItem("Current User Email");
+    elem.textContent = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).email;
 })
-let Dets = JSON.parse(localStorage.getItem("userProfileDets"));            
-document.querySelector("#phone").textContent = Dets["mobile"];
-document.querySelector("#location").textContent = Dets["Location"];
-document.querySelector("#bio").textContent = Dets["Bio"];
+var Dets = JSON.parse(localStorage.getItem("UserDetails"));
+var currentUserDets = JSON.parse(localStorage.getItem("CurrentLoggedInUser"));
+for (var i = 0;i<Dets.length;i++){
+    if(Dets[i].username == currentUserDets.username && Dets[i].passwd == currentUserDets.passwd){
+        document.querySelector("#phone").textContent = Dets[i].phone;
+        document.querySelector("#location").textContent = Dets[i].location;
+        document.querySelector("#bio").textContent = Dets[i].bio;
+    }
+}
 var mobileNumber;
 var locationDets;
 var BioDets;
 [Dets].forEach((dets)=>{
-    mobileNumber = dets.mobile
-    locationDets = dets.Location
-    BioDets = dets.Bio
-    document.querySelector("#phone").textContent = dets.mobile;
-    document.querySelector("#location").textContent = dets.Location;
-    document.querySelector("#bio").textContent = dets.Bio;
-})
+    if (dets.username === currentUserDets.username && dets.passwd === currentUserDets.passwd){
+        mobileNumber = dets.phone
+        locationDets = dets.location
+        BioDets = dets.bio
+        document.querySelector("#phone").textContent = dets.phone;
+        document.querySelector("#location").textContent = dets.location;
+        document.querySelector("#bio").textContent = dets.bio;
+    }
+})  
 
 document.querySelector("#edit-profile").addEventListener('click',()=>{
     var phone = confirm("Do you want to change the phone number ?") ? prompt("Enter the new phone number : ") : mobileNumber;
@@ -29,12 +36,20 @@ document.querySelector("#edit-profile").addEventListener('click',()=>{
     document.querySelector("#location").textContent = location;
     document.querySelector("#bio").textContent = bio;
 
-    let det1 = new Array();
-    det1 = {
-        mobile : phone,
-        Location : location,
-        Bio : bio   
+    // let det1 = new Array();
+    // det1 = {
+    //     mobile : phone,
+    //     Location : location,
+    //     Bio : bio   
+    // }
+    for (var i = 0;i<Dets.length;i++){
+        if(Dets[i].username == currentUserDets.username && Dets[i].passwd == currentUserDets.passwd){
+            Dets[i].phone = phone;
+            Dets[i].location = location;
+            Dets[i].bio = bio;
+        }
     }
-    localStorage.setItem("userProfileDets",JSON.stringify(det1));
+    
+    localStorage.setItem("UserDetails",JSON.stringify(Dets));
 })
 
