@@ -105,6 +105,7 @@ for (var i =0;i<Dets.length;i++){
     if (Dets[i].username == currUser.username && Dets[i].passwd == currUser.passwd){
         document.querySelector(".mobile").textContent = Dets[i].phone;
         document.querySelector(".Class").textContent = Dets[i].class;   
+        document.querySelector(".dob").textContent = Dets[i].dob;   
     }
 }
 
