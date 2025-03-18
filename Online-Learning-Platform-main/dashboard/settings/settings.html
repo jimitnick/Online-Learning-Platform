@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings : EduPrep Online Learning Platform</title>
+    <link rel="stylesheet" href="styleSettings.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main">
+        <div id="emailVerify">
+            <h2 style="font-size: 1.2em;">An Email has been sent to confirm your change in credentials.</h2>
+            <h4 style="font-weight: 500;font-size: 1em;">Please verify to continue learning further.</h4>
+            <button style="cursor: pointer;font-size: 1.1em;height: 3em; width: 5em;font-weight: 900 ;border-radius: 20px;border: none;background-color: #bee4fe;" href="mailto:abhijith091006@gmail.com?subject=The%20credentials%20updation&body=Credentials%0D%0A%0D%0AUpdated%20wanted%20to%20let%20you%20know%20your%20service%20rocks!%0D%0A%0D%0ACheers,%0D%0ASatisfied%20user%20%3A%29">OK</button>
+        </div>
+        <div id="first">
+            <div id="top">
+                <!-- icon -->
+                 <h2>EduPrep</h2>
+                 <p>Enhance Your Learning</p>
+            </div>
+            <div id="mid">
+                <li><a href="../dashboard.html"><i class="ri-dashboard-line"></i> Dashboard </a></li>
+                <li><a href="../course/course.html"><i class="ri-book-fill"></i> Course </a></li>
+                <li><a href=""><i class="ri-bookmark-2-line"></i> Resources </a></li>
+                <li><a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/04/11/20250104111047-0QN1GDG1.json"><i class="ri-chat-1-line"></i> Chat </a></li>
+                <li><a href=""><i class="ri-calendar-todo-fill"></i> Schedule </a></li>
+                <li><a href="../Profile/profile.html"><i class="ri-user-6-fill"></i> Profile </a></li>
+                <li><a href="" target="_parent"><i class="ri-settings-line"></i> Settings </a></li>
+            </div>
+            <div id="btm">
+                <!-- image -->
+                 <p>Upgrade to Pro for</p>
+                 <p>more resources</p>
+                 <button id="upgrade" onclick="redirect()">Upgrage Now</button>
+            </div>
+        </div>
+        <div id="second">
+            <div id="left">
+                <div class="box one">
+                    <div class="photo One"><i class="ri-settings-5-line"></i></div>
+                    <h3>General</h3>
+                </div>
+                <div class="box two">
+                    <div class="photo"><i class="ri-user-2-line"></i></div>
+                    <h3>User Profile</h3>
+                </div>
+                <div class="box three">
+                    <div class="photo"><i class="ri-mail-line"></i></div>
+                    <h3>Email Notifications</h3>
+                </div>
+                <div class="box four">
+                    <div class="photo"><i class="ri-wallet-3-line"></i></div>
+                    <h3>Payment</h3>
+                </div>
+                <div class="box five">
+                    <div class="photo"><i class="ri-exchange-dollar-fill"></i></div>
+                    <h3>Subscription </h3>
+                </div>
+                <div class="box six">
+                    <div class="photo"><i class="ri-notification-4-line"></i></div>
+                    <h3>Learning Reminder</h3>
+                </div>
+            </div>
+            <div id="right">
+                <div class="boxes one">
+                    <h1>General</h1>
+                    <div class="contents">
+                        <div>
+                            <h2>Appearance</h2>
+                            <button id="toggle">Dark/Light Mode</button>
+                        </div>
+                        <div>
+                            <h2>Permissions</h2>
+                            <button id="permissions">Click here to view</button>
+                        </div>
+                        <div>
+                            <h2>Change Username</h2>
+                            <button id="usernameChange">Click here to change the username</button>
+                        </div>
+                        <div>
+                            <h2>Change Password</h2>
+                            <button id="passwdChange">Click here to change the password</button>
+                        </div>
+                        <!-- <form action="https://api.web3forms.com/submit" method="POST" style="display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);display: flex;flex-direction: column;width: 15em;justify-content: space-between;min-height: 20em;border-radius: 20px;background-color: #bee4fe;padding: 15px;box-shadow: 0px 0px 552px 0px #bee4fe;border: solid 1px #222;">
+
+                           
+                            <input type="hidden" name="access_key" value="eccdb5c2-98ec-46b2-9953-63c6ca90bfd7">
+            
+                        
+                            UserName<input type="text" name="name" required>
+                            Password<input type="password" name="email" required>
+            
+                            
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: block;">Click here to accept the regualtions  
+            
+                            
+            
+                            <button type="submit">Submit Form</button>
+            
+                        </form> -->
+                    </div>
+                </div>
+                <div class="boxes two">
+                    <h1>User Profile</h1>
+                    <div class="contents">
+                        <div id="img" style="display: flex;position: relative;">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="" id="profilePhoto">
+                            <div style=" border-radius: 50%;background-color: #bee4fe;height: 3em;width: 3em;text-align: center;top: 40%;right: 0%;position: relative;cursor: pointer;" id="editPhoto">
+                                <i class="ri-pencil-line" style="position: absolute;"></i>
+                            </div>
+                            
+                        </div>
+                        <div id="info" style="overflow-y: auto;display: flex;flex-direction: column; width: 100%;padding: 20px; border-radius: 20px;border: solid 1px #222;">
+                            <div id="name" style="display: flex;justify-content: space-between; align-items: center;width: 100%;">
+                                <h3>Name</h3>
+                                <h4 class="username">Unknown</h4>
+                            </div>
+                            <hr>
+                            <div id="class" style="display: flex;justify-content: space-between; align-items: center;width: 100%;">
+                                <h3>Currently</h3>
+                                <h4 class="Class">XII</h4>
+                            </div>
+                            <hr>
+                            <div id="phone" style="display: flex;justify-content: space-between; align-items: center;width: 100%;">
+                                <h3>Phone</h3>
+                                <h4 class="mobile"></h4>   
+                            </div>
+                            <hr>
+                            <div id="email" style="display: flex;justify-content: space-between; align-items: center;width: 100%;">
+                                <h3>Email</h3>
+                                <h4 class="email"></h4>   
+                            </div>
+                            <hr>
+                            <div id="dob" style="display: flex;justify-content: space-between; align-items: center;width: 100%;">
+                                <h3>DOB</h3>
+                                <h4 class="dob"></h4>   
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes three">
+                    <h1>Email Notifications</h1>
+                </div>
+                <div class="boxes four">
+                    <h1>Payment</h1>
+                </div>
+                <div class="boxes five">
+                    <h1>Subscription</h1>
+                </div>
+                <div class="boxes six">
+                    <h1>Learning Reminder</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scriptSettings.js"></script>
+    <script>
+        function redirect(){
+            window.location.href = "/upgrade/upgrade.html"
+        }
+    </script>
+</body>
+</html>

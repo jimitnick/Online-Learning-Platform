@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+@media (max-width:860px) {
+    #loginPage #right{
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+    #loginPage #right img{
+        display: block;
+        scale: 1.3;
+    }
+    #loginPage #left{
+        z-index: 1;
+        background: transparent;
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    #loginPage #right h1{
+        top: 120%;
+        position: absolute;
+        left: 10%;
+        font-size: 3em;
+        display: none;
+    }   
+    #loginPage #right #footer{
+        display: none;
+    }
+    #loginPage #left #blur{
+        display: none;
+    }
+    #loginPage marquee{
+        display: none;
+    }
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #ECF5FF;
+}
+#loginPage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#loginPage #left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(45, 124, 179,0.6);
+    z-index: 10;
+    position: relative;
+}
+#loginPage #left #blur{
+    filter: blur(10px);
+    background-color: rgb(255, 255, 255,0.0);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+#loginPage #left,#right{
+    width: 50%;
+    position: relative;
+}
+#loginPage #right marquee{
+    top: -20%;
+    position: absolute;
+    animation: heading 1s linear  infinite alternate;
+}
+#loginPage #right img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+#loginPage #right h1{
+    font-size: 2em;
+    text-align: center;
+    font-weight: 500;
+    animation: heading 1s linear  infinite alternate;
+    margin-top: -5%;
+    margin-bottom: 15px;
+}
+#loginPage #right h2{
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+}
+#loginPage #left form:hover{
+    box-shadow: 0px 0px 45px 2px #2D7CB3;
+    transition: all ease-in-out 0.1s;
+}
+#loginPage #left form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 7px;
+    background-color: #2D7CB3;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 20px;
+    width: 23em;
+    min-height: 30em;
+}
+#loginPage #left form label{
+    font-size: 0.84em;
+    letter-spacing: 1.6px;
+    font-weight: 500;
+}
+#loginPage #left form input:focus{
+    outline: none;
+    border: solid 2px #A2EFFF;
+    transition: all ease-in-out 0.15s;
+}
+#loginPage #left form input{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    height: 3em;    
+    padding-inline: 7px;
+    background-color: #2D7CB3;
+    border-bottom: solid 2px #A2EFFF;
+    color: #fff;
+    border-top: solid 0.8px #46b3c9;
+}
+#loginPage #left form #Name, #email,#dob{
+    display: none;
+}
+#loginPage #left form #submit{
+    border-radius: 10px;
+    border: none;
+    height: 3em; 
+    cursor: pointer;
+    letter-spacing: 4px;
+    box-shadow: 0px 5px 12px 1px rgb(34, 34, 34,0.4);
+    border-bottom: 20px;
+}
+#loginPage #left form #submit:hover{
+    background-color: #A2EFFF;
+    border: solid 1.2px #2D7CB3; 
+    box-shadow: 0px 0px 12px 1px #A2EFFF;   
+    transition: all ease-in-out 0.2s;
+    letter-spacing: 6px;
+}
+#loginPage #left form #loginSignup {
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+#loginPage #left form #loginSignup button{
+    width: 50%;
+    height: 3em;
+    cursor: pointer;
+}
+#loginPage #left form #loginSignup #login{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: solid 1px #A2EFFF;
+    background-color: #2D7CB3;
+    color: #fff;
+    font-size: 0.84em;
+}
+#loginPage #left form #loginSignup #login:hover{
+    letter-spacing: 7px;
+    transition: all ease-in-out 0.2s;
+
+}
+#loginPage #left form #loginSignup #signup:hover{
+    background-color: #2D7CB3;
+    color:#fff;
+    letter-spacing: 7px;
+    transition: all ease-in-out 0.2s;
+}
+#loginPage #left form #loginSignup #signup{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: solid 1px #A2EFFF;
+    font-size: 0.84em;
+}
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 118%;
+    width: 100%;
+    height: 15.5%;
+    background-color: #A2EFFF;
+    position: absolute;
+    color: #000;
+}
+#footer span{
+    font-size: 1.5em;
+    text-align: center;
+    justify-items: center;
+}
+#footer h3{
+    font-size: 1em;
+    text-align: center;
+    justify-items: center;
+}
+@keyframes heading {
+    0%{
+        color: #000;
+    }
+    50%{
+        color: #46b3c9;
+    }
+    100%{
+        color: #2D7CB3;
+    }
+}

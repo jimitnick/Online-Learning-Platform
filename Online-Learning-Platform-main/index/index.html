@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Student Management System</title>
+    <link rel="stylesheet" href="styleIndex.css" />
+  </head>
+  <body>
+    <div id="loginPage">
+      <div id="left">
+        <div id="blur"></div>
+        <form method="get" class="Form">
+          <div id="loginSignup">
+            <button id="login" type="button">Login</button>
+            <button id="signup" type="button">Sign Up</button>
+          </div>
+          <label for="Name" id="Name">Name</label>
+          <input type="text" name="Name" id="Name" class="name" />
+          <label for="email" id="email">E-mail</label>
+          <input type="email" name="email" id="email" class="email" />
+          <label for="dob" id="dob">Date Of Birth</label>
+          <input type="date" name="dob" id="dob" class="dob" />
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" class="username" />
+          <label for="passwd">Password</label>
+          <input
+            type="password"
+            name="passwd"
+            id="passwd"
+            class="passwd"
+            required
+          />
+          <button id="submit" onclick="check()">Login</button>
+        </form>
+      </div>
+      <div id="right">
+        <marquee behavior="scroll" direction="right"
+          ><span>Courses at wonderful offers !!</span></marquee
+        >
+        <h1>EduPrep Online Learning Platform</h1>
+        <img src="loginLogo.jpeg" alt="" />
+        <h2>The next Gen Learning platform</h2>
+        <div id="footer">
+          <h3>Copyright</h3>
+          <span>&#169;</span>
+        </div>
+      </div>
+    </div>
+    <div id="page1"></div>
+    <script src="scriptIndex.js"></script>
+  </body>
+</html>
