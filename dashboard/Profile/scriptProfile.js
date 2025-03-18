@@ -16,17 +16,16 @@ for (var i = 0;i<Dets.length;i++){
 var mobileNumber;
 var locationDets;
 var BioDets;
-[Dets].forEach((dets)=>{
-    if (dets.username === currentUserDets.username && dets.passwd === currentUserDets.passwd){
-        mobileNumber = dets.phone
-        locationDets = dets.location
-        BioDets = dets.bio
-        document.querySelector("#phone").textContent = dets.phone;
-        document.querySelector("#location").textContent = dets.location;
-        document.querySelector("#bio").textContent = dets.bio;
+for(var i = 0;i<Dets.length;i++){
+    if (Dets[i].username === currentUserDets.username && Dets[i].passwd === currentUserDets.passwd){
+        mobileNumber = Dets[i].phone
+        locationDets = Dets[i].location
+        BioDets = Dets[i].bio
+        document.querySelector("#phone").textContent = Dets[i].phone;
+        document.querySelector("#location").textContent = Dets[i].location;
+        document.querySelector("#bio").textContent = Dets[i].bio;
     }
-})  
-
+}
 document.querySelector("#edit-profile").addEventListener('click',()=>{
     var phone = confirm("Do you want to change the phone number ?") ? prompt("Enter the new phone number : ") : mobileNumber;
     var location = confirm("Do you want to change the location ?") ? prompt("Enter the new location : ") : locationDets;
@@ -36,12 +35,6 @@ document.querySelector("#edit-profile").addEventListener('click',()=>{
     document.querySelector("#location").textContent = location;
     document.querySelector("#bio").textContent = bio;
 
-    // let det1 = new Array();
-    // det1 = {
-    //     mobile : phone,
-    //     Location : location,
-    //     Bio : bio   
-    // }
     for (var i = 0;i<Dets.length;i++){
         if(Dets[i].username == currentUserDets.username && Dets[i].passwd == currentUserDets.passwd){
             Dets[i].phone = phone;

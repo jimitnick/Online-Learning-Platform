@@ -85,8 +85,6 @@ function check() {
                 if (elem.username == username && elem.passwd == password) {
                     window.location.href = "/dashboard/dashboard.html";
                     console.log("clicked");
-                    localStorage.setItem("Current User",elem.name);
-                    localStorage.setItem("Current User Email",elem.email);
                 }
             })
         }

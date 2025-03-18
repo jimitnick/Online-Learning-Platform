@@ -88,3 +88,11 @@ prev.addEventListener("click", () => {
     selectedDate = 1;
     updateCalendar();
 });
+document.querySelector("#photo").addEventListener('click',()=>{
+    if(document.querySelector("#logout").style.display == "none"){
+        document.querySelector("#logout").style.display = "block";
+    }
+    else{
+        document.querySelector("#logout").style.display = "none";
+    }
+})
