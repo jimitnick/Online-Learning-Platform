@@ -16,19 +16,20 @@
             <button id="signup" type="button">Sign Up</button>
           </div>
           <label for="Name" id="Name">Name</label>
-          <input type="text" name="Name" id="Name" class="name" />
+          <input type="text" name="Name" id="Name" class="name" required/>
           <label for="email" id="email">E-mail</label>
-          <input type="email" name="email" id="email" class="email" />
+          <input type="email" name="email" id="email" class="email" required/>
           <label for="dob" id="dob">Date Of Birth</label>
-          <input type="date" name="dob" id="dob" class="dob" />
+          <input type="date" name="dob" id="dob" class="dob" required/>
           <label for="username">Username</label>
-          <input type="text" name="username" id="username" class="username"/>
+          <input type="text" name="username" id="username" class="username" required/>
           <label for="passwd">Password</label>
           <input
             type="password"
             name="passwd"
             id="passwd"
             class="passwd"
+            required
           />
           <button id="submit" onclick="check()">Login</button>
         </form>
