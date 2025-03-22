@@ -174,8 +174,19 @@ document.getElementById("learningReminderBtn").addEventListener("click", functio
     const time = prompt("Set reminder time (HH:MM AM/PM):");
     if (time) {
         localStorage.setItem("learningReminder", time);
+        var c = document.createElement("h3");
+        c.id = "rems";
+        c.innerHTML = time;
+        document.querySelector("#main #second #right .six .contents #reminders").appendChild(c);
         alert("Learning reminder set for " + time);
     } else {
         alert("Reminder setup canceled.");
     }
 });
+
+document.querySelectorAll("#main #second #right .six .contents #reminders h3").forEach((elem)=>{
+    elem.addEventListener('click',()=>{
+        console.log("deleted");
+        elem.remove();
+    })
+})

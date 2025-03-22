@@ -268,3 +268,14 @@ html,body{
         color: #2D7CB3;
     }
 }
+#main #second #right .six .contents #reminders{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+}
+#main #second #right .six .contents #reminders h3{
+    cursor: pointer;
+}
