@@ -109,3 +109,56 @@ for (var i =0;i<Dets.length;i++){
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const emailNotificationToggle = document.getElementById("emailNotificationToggle");
+    const sendTestEmailButton = document.getElementById("sendTestEmail");
+
+    // Load saved preference
+    emailNotificationToggle.checked = localStorage.getItem("emailNotifications") === "true";
+
+    // Save toggle state
+    emailNotificationToggle.addEventListener("change", function () {
+        localStorage.setItem("emailNotifications", this.checked);
+        alert("Email notifications " + (this.checked ? "enabled" : "disabled"));
+    });
+
+    // Send test email using a mailto link (Basic Approach)
+    sendTestEmailButton.addEventListener("click", function () {
+        if (emailNotificationToggle.checked) {
+            const email = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).email;
+            window.location.href = `mailto:${email}?subject=Test Email Notification&body=This is a test email from EduPrep.`;
+        } else {
+            alert("Enable email notifications first.");
+        }
+    });
+});
+
+    
+    // Payment Settings
+    document.getElementById("paymentSettingsBtn").addEventListener("click", function () {
+        fetch("http://localhost:5000/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.url) {
+                window.location.href = data.url; // Redirect to Stripe checkout
+            } else {
+                alert("Payment failed. Try again.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+    
+    // Learning Reminder
+    document.getElementById("learningReminderBtn").addEventListener("click", function () {
+        const time = prompt("Set reminder time (HH:MM AM/PM):");
+        if (time) {
+            localStorage.setItem("learningReminder", time);
+            alert("Learning reminder set for " + time);
+        } else {
+            alert("Reminder setup canceled.");
+        }
+    });
+});
