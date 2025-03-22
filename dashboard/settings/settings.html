@@ -6,6 +6,7 @@
     <title>Settings : EduPrep Online Learning Platform</title>
     <link rel="stylesheet" href="styleSettings.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -128,8 +129,12 @@
                     <h1>Email Notifications</hl> 
                     <div class="contents">
                         <div>
-                            <h2>Enable Email Notifications</h2>
+                            <h6>Enable Email Notifications</h6>
                             <input type="checkbox" id="emailNotificationToggle">
+                        </div>
+                        <div style="display: flex;flex-direction: column;gap: 15px;">
+                            <input type="text" name="title" id="title" placeholder="Enter the problem title" style="padding: 10px;border: solid 1px #dadada;border-radius: 10px;">
+                            <input type="text" name="message" id="message" placeholder="Enter the message" style="padding: 10px;border: solid 1px #dadada;border-radius: 10px;">
                         </div>
                         <button id="sendTestEmail">Send Test Email </button>
                     </div>

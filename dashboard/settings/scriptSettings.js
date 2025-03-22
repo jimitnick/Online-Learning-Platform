@@ -115,7 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load saved preference
     emailNotificationToggle.checked = localStorage.getItem("emailNotifications") === "true";
-
+    (function() {
+        emailjs.init("MqP7EA618imze7kWq");  // Replace with your EmailJS Public Key
+    })();
     // Save toggle state
     emailNotificationToggle.addEventListener("change", function () {
         localStorage.setItem("emailNotifications", this.checked);
@@ -126,7 +128,23 @@ document.addEventListener("DOMContentLoaded", function () {
     sendTestEmailButton.addEventListener("click", function () {
         if (emailNotificationToggle.checked) {
             const email = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).email;
-            window.location.href = `mailto:${email}?subject=Test Email Notification&body=This is a test email from EduPrep.`;
+            const name = JSON.parse(localStorage.getItem("CurrentLoggedInUser")).name;
+            const mess = document.querySelector("#main #second #right .three .contents #message").value;
+            const head = document.querySelector("#main #second #right .three .contents #title").value;
+            emailjs.send("service_csid1hj", "template_nrljrn7", {
+                to_email: "onlinelearningplatform1234@gmail.com",
+                from_email: email, // Recipient Email
+                name: name,
+                reply_to: email,
+                subject: `Issue with ${head}`,
+                message: mess
+            }).then(function(response) {
+                alert("Mail sent successfully!");
+            }, function(error) {
+                alert("Failed to send email. Error: " + error.text);
+            });
+            document.getElementById("message").value = "";
+            document.getElementById("title").value= "";
         } else {
             alert("Enable email notifications first.");
         }

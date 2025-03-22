@@ -237,6 +237,18 @@ html,body{
     height: 10em;
     padding: 10px;
 }
+#main #second #right .boxes .contents #sendTestEmail{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #bee4fe;
+    cursor: pointer;
+}
+#main #second #right .boxes .contents #sendTestEmail:hover{
+    background-color: #2D7CB3;
+    transition: all ease-in-out 0.2s;
+    color: #fff;
+}
 #main #second #right .boxes .contents #img img{
     border-radius: 50%;
     box-shadow: 0px 0px 12px 3px #2D7CB3;

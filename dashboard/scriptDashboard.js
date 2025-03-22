@@ -96,3 +96,6 @@ document.querySelector("#photo").addEventListener('click',()=>{
         document.querySelector("#logout").style.display = "none";
     }
 })
+document.querySelector("#logout a").addEventListener('click',()=>{
+    window.location.href = "/index/index.html";
+})
