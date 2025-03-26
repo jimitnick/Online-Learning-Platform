@@ -26,6 +26,7 @@ for(var i = 0;i<Dets.length;i++){
         document.querySelector("#bio").textContent = Dets[i].bio;
     }
 }
+const rePhone = /^[0-9]{10}$/;
 document.querySelector("#edit-profile").addEventListener('click',()=>{
     var phone = confirm("Do you want to change the phone number ?") ? prompt("Enter the new phone number : ") : mobileNumber;
     var location = confirm("Do you want to change the location ?") ? prompt("Enter the new location : ") : locationDets;
@@ -37,7 +38,12 @@ document.querySelector("#edit-profile").addEventListener('click',()=>{
 
     for (var i = 0;i<Dets.length;i++){
         if(Dets[i].username == currentUserDets.username && Dets[i].passwd == currentUserDets.passwd){
-            Dets[i].phone = phone;
+            if (rePhone.test(phone)){
+                Dets[i].phone = phone;
+            }
+            else{
+                alert("Phone cannot be updated as the entered phone number is invalid")
+            }
             Dets[i].location = location;
             Dets[i].bio = bio;
         }

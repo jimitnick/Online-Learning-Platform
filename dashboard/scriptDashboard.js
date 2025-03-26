@@ -10,7 +10,7 @@ let details = JSON.parse(localStorage.getItem("UserDetails"));
 for (var i =0;i<details.length;i++){
     if (details[i].username == Dets.username && details[i].passwd == Dets.passwd){
         document.querySelector(".Class").textContent = details[i].class;
-    }
+    }   
 }
 const monthfield = document.querySelector("#calender #month #date h2");
 const datefield = document.querySelector("#calender #month #date p");

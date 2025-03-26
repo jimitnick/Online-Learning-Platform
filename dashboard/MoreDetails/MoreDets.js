@@ -51,6 +51,10 @@ function create(count) {
         tempDiv.appendChild(inputField);
         tempDiv.appendChild(errorMsg);
         centerDiv.append(tempDiv);
+        
+        inputField.addEventListener("input", function () {
+            dets[required[count]] = inputField.value;
+        });
     }
 }
 
