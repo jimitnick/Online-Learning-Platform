@@ -68,6 +68,13 @@ function check() {
                 localStorage.setItem("CurrentLoggedInUser",JSON.stringify(loggedInUserDets));
                 window.location.href = "../dashboard/MoreDetails/MoreDets.html";
             }
+            var loggedInUserDets = {
+                "username" : username,
+                "passwd" : password,
+                "email" : email,
+                "name" : name
+            }
+            localStorage.setItem("CurrentLoggedInUser",JSON.stringify(loggedInUserDets));
             document.querySelector(".name").value = "";
             document.querySelector(".email").value = "";
             document.querySelector(".dob").value = "";
@@ -80,10 +87,19 @@ function check() {
             let userData = JSON.parse(localStorage.getItem("UserDetails"));
             var username = document.querySelector(".username").value;
             var password = document.querySelector(".passwd").value;
+            var name = document.querySelector(".name").value;
+            var email = document.querySelector(".email").value;
             
             userData.forEach((elem)=>{
                 if (elem.username == username && elem.passwd == password) {
-                    window.location.href = "/dashboard/dashboard.html";
+                    window.location.href = "/dashboard/dashboard.html"; 
+                    var loggedInUserDets = {
+                        "username" : username,
+                        "passwd" : password,
+                        "email" : email,
+                        "name" : name
+                    }
+                    localStorage.setItem("CurrentLoggedInUser",JSON.stringify(loggedInUserDets));
                     console.log("clicked");
                 }
             })

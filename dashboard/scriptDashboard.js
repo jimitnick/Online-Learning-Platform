@@ -98,4 +98,13 @@ document.querySelector("#photo").addEventListener('click',()=>{
 })
 document.querySelector("#logout a").addEventListener('click',()=>{
     window.location.href = "/index/index.html";
+    
+    var currentDets= {
+        name : "",
+        username:"",
+        email:"",
+        passwd :""
+    }
+
+    localStorage.setItem("CurrentLoggedInUser",JSON.stringify(currentDets));
 })
