@@ -36,7 +36,7 @@ function create(count) {
             
             inputField.addEventListener("input", function () {
                 dets.phone = inputField.value;
-                if (dets.phone.length !== 10 || isNaN(dets.phone)) {
+                if (dets.phone.length !== 10 || (isNaN(dets.phone))&&dets.phone.trim() !=="") {
                     errorMsg.textContent = "Please enter a valid 10-digit phone number.";
                     errorMsg.style.display = "block";
                     startBtn.disabled = true;
@@ -53,6 +53,7 @@ function create(count) {
         centerDiv.append(tempDiv);
     }
 }
+
 
 var startBtn = document.getElementById("start");
 
