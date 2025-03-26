@@ -32,7 +32,7 @@ document.querySelector("#edit-profile").addEventListener('click',()=>{
     var location = confirm("Do you want to change the location ?") ? prompt("Enter the new location : ") : locationDets;
     var bio = confirm("Do you want to change the bio ?") ? prompt("Enter the new bio : ") : BioDets;
 
-    document.querySelector("#phone").textContent = phone;
+    document.querySelector("#phone").textContent = rePhone.test(phone) ? phone : mobileNumber;
     document.querySelector("#location").textContent = location;
     document.querySelector("#bio").textContent = bio;
 
@@ -43,6 +43,7 @@ document.querySelector("#edit-profile").addEventListener('click',()=>{
             }
             else{
                 alert("Phone cannot be updated as the entered phone number is invalid")
+                Dets[i].phone = mobileNumber;
             }
             Dets[i].location = location;
             Dets[i].bio = bio;
