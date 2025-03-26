@@ -1,63 +1,5 @@
-// var currUserDets = localStorage.getItem("UserDetails");
-// var loggedInUser = JSON.parse(localStorage.getItem("LoggedInUser")) || [];
-// let required = ["phone","location","bio","class"]
-// var count = 0;
-// var dets = {
-//     phone : "",
-//     location : "",
-//     bio :"",
-//     class : "" 
-// }
-// var centerDiv = document.getElementById("center");
-// function create(count){
-//     if (count < required.length){
-//         var h1elem = document.createElement("h1");
-//         var inputField = document.createElement("input");
-//         inputField.placeholder = `Enter the ${required[count]}`;
-//         h1elem.id = "head";
-//         inputField.id = "userText";
-//         centerDiv.appendChild(h1elem);
-//         centerDiv.appendChild(inputField);
-//         dets[required[count]] = inputField.value;
-//     }
-// }
-
-// var startBtn = document.getElementById("start");
-
-// startBtn.addEventListener('click',()=>{
-//     startBtn.innerHTML = "Next";
-//     startBtn.style.width = "15em";
-//     startBtn.style.transform = 
-//     create(count);  
-//     if (count == required.length - 1){
-//         startBtn.innerHTML = "Let's Go";
-//     }
-//     if (count == required.length){
-//         updateUserDetails();
-//         window.location.href = "../dashboard.html";
-//     }
-//     count++;
-// })
-
-
-// function updateUserDetails() {
-//     if (!currUserDets) {
-//         alert("No logged-in user found!");
-//         return;
-//     }
-
-//     let userIndex = currUserDets.findIndex(user => user.username === loggedInUser.username || user.email === loggedInUser.email);
-
-//     if (userIndex !== -1) {
-//         // Update user details
-//         currUserDets[userIndex] = { ...currUserDets[userIndex], ...dets };
-//         localStorage.setItem("UserDetails", JSON.stringify(currUserDets));
-//     } else {
-//         alert("User not found!");
-//     }
-// }
-var loggedInUser  = JSON.parse(localStorage.getItem("CurrentLoggedInUser")) ;
-var currUserDets= JSON.parse(localStorage.getItem("UserDetails")); // Assumed logged-in user info
+var loggedInUser = JSON.parse(localStorage.getItem("CurrentLoggedInUser"));
+var currUserDets = JSON.parse(localStorage.getItem("UserDetails")); // Assumed logged-in user info
 let required = ["phone", "location", "bio", "class"];
 var count = 0;
 
@@ -80,24 +22,47 @@ function create(count) {
         inputField.placeholder = `Enter the ${required[count]}`;
         h1elem.textContent = `Enter your ${required[count]}`;
         inputField.id = "userText"; // Unique ID for each field
+        
+        var errorMsg = document.createElement("p");
+        errorMsg.id = "error-msg";
+        errorMsg.style.color = "red";
+        errorMsg.style.display = "none";
+        
+        // Restrict phone input to numbers only
+        if (required[count] === "phone") {
+            inputField.type = "tel";
+            inputField.pattern = "\\d{10}";
+            inputField.maxLength = 10;
+            
+            inputField.addEventListener("input", function () {
+                dets.phone = inputField.value;
+                if (dets.phone.length !== 10 || isNaN(dets.phone)) {
+                    errorMsg.textContent = "Please enter a valid 10-digit phone number.";
+                    errorMsg.style.display = "block";
+                    startBtn.disabled = true;
+                } else {
+                    errorMsg.style.display = "none";
+                    startBtn.disabled = false;
+                }
+            });
+        }
+        
         tempDiv.appendChild(h1elem);
         tempDiv.appendChild(inputField);
+        tempDiv.appendChild(errorMsg);
         centerDiv.append(tempDiv);
-        // Update dets when input changes
-        inputField.addEventListener("input", function () {
-            dets[required[count]] = inputField.value;
-        });
     }
 }
 
 var startBtn = document.getElementById("start");
 
 startBtn.addEventListener("click", () => {
+    if (count === 0) startBtn.disabled = true;
     startBtn.style.top = "90%";
     startBtn.innerHTML = "Next";
     startBtn.style.width = "15em";
     create(count);
-
+    
     if (count === required.length - 1) {
         startBtn.innerHTML = "Let's Go";
     }
