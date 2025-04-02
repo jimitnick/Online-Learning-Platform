@@ -106,7 +106,7 @@ function check() {
                         "name" : name
                     }
                     localStorage.setItem("CurrentLoggedInUser",JSON.stringify(loggedInUserDets));
-                    window.location.href = "/dashboard/dashboard.html"; 
+                    window.location.href = "../dashboard/dashboard.html"; 
                     console.log("clicked");
                 }
             })
