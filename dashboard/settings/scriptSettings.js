@@ -57,16 +57,7 @@ settingsBox.forEach((elem)=>{
 })
 
 // username validation
-UsernameChangeBtn.addEventListener('click',()=>{
-    var username = prompt("Enter new username ");
-    if (username != ""){
-        alert("Username updated successfully !");
-        emailVerifyBox.style.display = "flex";
-    }
-    else{
-        alert("Username updation failed");
-    } 
-})
+
 // email verfication ok button functionality
 okBtn.addEventListener('click',()=>{
     emailVerifyBox.style.display = "none";
@@ -108,6 +99,21 @@ for (var i =0;i<Dets.length;i++){
         document.querySelector(".dob").textContent = Dets[i].dob;   
     }
 }
+
+var Dets = JSON.parse(localStorage.getItem("UserDetails"));
+UsernameChangeBtn.addEventListener('click',()=>{
+    var username = prompt("Enter new username ");
+    for (var i = 0;i<Dets.length;i++){
+        if (username != "" && Dets[i].username == currUser.username && Dets[i].passwd == currUser.passwd){
+            alert("Username updated successfully !");
+            Dets[i].username = username;
+            emailVerifyBox.style.display = "flex";
+        }
+        else{
+            alert("Username updation failed");
+        } 
+    }
+})
 
 document.addEventListener("DOMContentLoaded", function () {
     const emailNotificationToggle = document.getElementById("emailNotificationToggle");

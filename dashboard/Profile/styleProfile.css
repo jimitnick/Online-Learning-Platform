@@ -196,7 +196,18 @@ h3 {
     border-radius: 10px;
     font-size: 14px;
 }
-
+#progress{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#progress p{
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    display: flex;
+}
 /* Course Progress */
 .progress-bar {
     display: block;
@@ -206,6 +217,7 @@ h3 {
     border-radius: 5px;
     margin-top: 5px;
     position: relative;
+    margin-left: 10px;
 }
 
 .progress-bar span {

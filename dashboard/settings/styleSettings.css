@@ -279,3 +279,18 @@ html,body{
 #main #second #right .six .contents #reminders h3{
     cursor: pointer;
 }
+#learningReminderBtn{
+    padding: 10px;
+    background-color: #bee4fe;
+    color: #000;
+    border: solid 1px #2C7AB1;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 50px;
+}
+#learningReminderBtn:hover{
+    background: #2D7CB3;
+    color: #fff;
+    border: solid 2px #fff;
+    transition:  all ease-in-out 0.2s;
+}
