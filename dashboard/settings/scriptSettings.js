@@ -196,3 +196,6 @@ document.querySelectorAll("#main #second #right .six .contents #reminders h3").f
         elem.remove();
     })
 })
+document.querySelector("#paymentSettingsBtn").addEventListener('click',()=>{
+    window.location.href = "../payment/payment.html";
+})
