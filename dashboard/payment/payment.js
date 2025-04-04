@@ -34,3 +34,10 @@ function displayMessage(message, color) {
     paymentMessage.textContent = message;
     paymentMessage.style.color = color;
 }
+
+document.querySelector("#back").addEventListener('click',()=>{
+    var confirmation = confirm("Are you sure you want to cancel the payment ?");
+    if (confirmation){
+        window.location.href = "../dashboard.html";
+    }
+})
