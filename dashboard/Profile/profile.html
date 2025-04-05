@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile : EduPrep Online Learning Platform</title>
     <link rel="stylesheet" href="styleProfile.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <div id="main">
         <div id="one">
             <div id="top">
-                 <h2>EduPrep</h2>
-                 <p>Enhance Your Learning</p>
+                <h2>EduPrep</h2>
+                <p>Enhance Your Learning</p>
             </div>
             <div id="mid">
                 <li><a href="../dashboard.html"><i class="ri-dashboard-line"></i> Dashboard </a></li>
-                <li><a href="../course/course.html" ><i class="ri-book-fill"></i> Course </a></li>
+                <li><a href="../course/course.html"><i class="ri-book-fill"></i> Course </a></li>
                 <li><a href="../Resources/resources.html"><i class="ri-bookmark-2-line"></i> Resources </a></li>
-                <li><a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/04/11/20250104111047-0QN1GDG1.json"><i class="ri-chat-1-line"></i> Chat </a></li>
+                <li><a
+                        href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/04/11/20250104111047-0QN1GDG1.json"><i
+                            class="ri-chat-1-line"></i> Chat </a></li>
                 <li><a href="../Schedule/schedule.html"><i class="ri-calendar-todo-fill"></i> Schedule </a></li>
                 <li><a href="../Profile/profile.html" class="active"><i class="ri-user-6-fill"></i> Profile </a></li>
                 <li><a href="../settings/settings.html"><i class="ri-settings-line"></i> Settings </a></li>
             </div>
             <div id="btm">
-                 <p>Upgrade to Pro for</p>
-                 <p>more resources</p>
-                 <button id="upgrade" onclick="redirect()">Upgrade Now</button>
+                <p>Upgrade to Pro for</p>
+                <p>more resources</p>
+                <button id="upgrade" onclick="redirect()">Upgrade Now</button>
             </div>
         </div>
 
@@ -37,14 +41,15 @@
             </div>
             <div id="profile-content">
                 <div id="profile-pic">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="Profile Picture">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
+                        alt="Profile Picture">
                 </div>
                 <div id="profile-info">
                     <h3 class="Username"></h3>
                     <p class="Email"><i class="ri-mail-line"></i></p>
-                    <p ><i class="ri-phone-line"></i><span id="phone"></span> </p>
-                    <p ><i class="ri-map-pin-line"></i><span id="location"></span></p>
-                    <p ><i class="ri-user-line"></i><span id="bio"></span> </p>
+                    <p><i class="ri-phone-line"></i><span id="phone"></span> </p>
+                    <p><i class="ri-map-pin-line"></i><span id="location"></span></p>
+                    <p><i class="ri-user-line"></i><span id="bio"></span> </p>
                     <button id="edit-profile">Edit Profile</button>
                 </div>
             </div>
@@ -81,11 +86,25 @@
             </div>
         </div>
     </div>
+    <!-- Edit Profile Modal -->
+    <div id="editModal"
+        style="display: none; position: fixed; top: 20%; left: 35%; background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000; box-shadow: 0 0 15px rgba(0,0,0,0.3); border-radius: 10px;">
+        <h3>Edit Profile</h3>
+        <label for="modalPhone">Phone Number:</label>
+        <input type="text" id="modalPhone" /><br /><br />
+        <label for="modalLocation">Location:</label>
+        <input type="text" id="modalLocation" /><br /><br />
+        <label for="modalBio">Bio:</label>
+        <input type="text" id="modalBio" /><br /><br />
+        <button id="saveChanges">Save</button>
+        <button id="cancelChanges">Cancel</button>
+    </div>
     <script>
-        function redirect(){
+        function redirect() {
             window.location.href = "/upgrade/upgrade.html"
         }
     </script>
     <script src="scriptProfile.js"></script>
 </body>
+
 </html>
