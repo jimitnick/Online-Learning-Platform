@@ -88,16 +88,26 @@
     </div>
     <!-- Edit Profile Modal -->
     <div id="editModal"
-        style="display: none; position: fixed; top: 20%; left: 35%; background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000; box-shadow: 0 0 15px rgba(0,0,0,0.3); border-radius: 10px;">
-        <h3>Edit Profile</h3>
-        <label for="modalPhone">Phone Number:</label>
-        <input type="text" id="modalPhone" /><br /><br />
-        <label for="modalLocation">Location:</label>
-        <input type="text" id="modalLocation" /><br /><br />
-        <label for="modalBio">Bio:</label>
-        <input type="text" id="modalBio" /><br /><br />
-        <button id="saveChanges">Save</button>
-        <button id="cancelChanges">Cancel</button>
+        style="display: none; position: fixed; top: 50%; left: 50%; background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000; box-shadow: 0 0 15px rgba(0,0,0,0.3); border-radius: 10px;transform: translate(-50%,-50%);">
+        <h3 style="text-align: center;">Edit Profile</h3>
+        <hr>
+        <div style="display: flex;justify-content: space-between;padding: 10px;gap: 20px;">
+            <label for="modalPhone">Phone Number:</label>
+            <input type="text" id="modalPhone" />
+        </div>
+        
+        <div style="display: flex;justify-content: space-between;padding: 10px;gap: 20px;">
+            <label for="modalLocation">Location:</label>
+            <input type="text" id="modalLocation" />
+        </div>
+        <div style="display: flex;justify-content: space-between;padding: 10px;gap: 20px;">
+            <label for="modalBio">Bio:</label>
+            <input type="text" id="modalBio" />
+        </div>
+        <div style="display: flex;justify-content: space-between;width: 100%;">
+            <button id="saveChanges">Save</button>
+            <button id="cancelChanges">Cancel</button>
+        </div>
     </div>
     <script>
         function redirect() {

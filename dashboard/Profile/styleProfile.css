@@ -254,3 +254,17 @@ h3 {
 #social-links a i {
     margin-right: 8px;
 }
+#editModal button{
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    cursor: pointer;
+    width: 130px;
+}
+#editModal button:hover{
+    background: #1A5A80;
+    color: #fff;
+}
+#editModal input{
+    padding: 10px;
+}
