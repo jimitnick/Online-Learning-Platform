@@ -294,3 +294,15 @@ html,body{
     border: solid 2px #fff;
     transition:  all ease-in-out 0.2s;
 }
+#paymentSettingsBtn{
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+    cursor: pointer;
+}
+#paymentSettingsBtn:hover{
+    background: #46b3c9;
+    color: #000;
+    transition: all ease-in-out 0.2s;
+    border: solid 1px #fff;
+}
