@@ -176,17 +176,20 @@ document.getElementById("paymentSettingsBtn").addEventListener("click", function
 });
     
     // Learning Reminder
+var num = 1;
 document.getElementById("learningReminderBtn").addEventListener("click", function () {
-    const time = prompt("Set reminder time (HH:MM AM/PM):");
+    var time = document.querySelector("#reminder").value;
     if (time) {
         localStorage.setItem("learningReminder", time);
         var c = document.createElement("h3");
         c.id = "rems";
-        c.innerHTML = time;
+        c.innerHTML = num+". "+time;
         document.querySelector("#main #second #right .six .contents #reminders").appendChild(c);
         alert("Learning reminder set for " + time);
+        document.querySelector("#reminder").value = "";
+        num++;
     } else {
-        alert("Reminder setup canceled.");
+        alert("Enter some reminders");
     }
 });
 

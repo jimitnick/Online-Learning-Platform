@@ -306,3 +306,9 @@ html,body{
     transition: all ease-in-out 0.2s;
     border: solid 1px #fff;
 }
+#reminder{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 1px #dadada;
+}
