@@ -15,7 +15,7 @@ Make sure you have the following installed:
 
 ---
 
-## 📆 Clone the Repository
+## 📦 Clone the Repository
 
 ```bash
 git clone https://github.com/jimitnick/Online-Learning-Platform.git
@@ -24,7 +24,7 @@ cd Online-Learning-Platform
 
 ---
 
-## 🔤️ Running the Project
+## 🖥️ Running the Project
 
 1. Navigate to the `index` directory:
 
@@ -46,9 +46,9 @@ cd Online-Learning-Platform
 
 ---
 
-## 🛠️ Create Electron Executable (.exe)
+## 🛠️ Create Electron Executable (.exe or .app)
 
-To create a standalone `.exe` file for Windows:
+### ▶️ For Windows:
 
 1. Ensure you’re in the `index` directory:
 
@@ -62,13 +62,27 @@ To create a standalone `.exe` file for Windows:
    npx electron-packager . Online-Learning-Platform --platform=win32 --arch=x64 --icon=icon.ico --overwrite
    ```
 
-✅ This will generate a folder like `Online-Learning-Platform-win32-x64` with your executable inside.
+✅ This will generate a folder like `Online-Learning-Platform-win32-x64` with your `.exe` file inside.
+
+### 🍏 For macOS:
+
+1. Run the following command (from the `index` directory):
+
+   ```bash
+   npx electron-packager . Online-Learning-Platform --platform=darwin --arch=x64 --icon=icon.icns --overwrite
+   ```
+
+✅ This will generate a folder like `Online-Learning-Platform-darwin-x64` with the `.app` bundle for macOS.
+
+> ⚠️ Note: Building for macOS from Windows is not supported. You must run this command on a macOS system.
 
 ---
 
-## 📆 Build a Setup Installer (.exe)
+## 📦 Build a Setup Installer (.exe or .dmg)
 
-To create a complete Windows installer:
+To create a complete installer:
+
+### 🪟 For Windows:
 
 1. Install `electron-builder` as a dev dependency:
 
@@ -115,7 +129,26 @@ To create a complete Windows installer:
    npm run build
    ```
 
-📁 Your `.exe` installer will be available in the `dist/` folder.
+📁 Your Windows `.exe` installer will be available in the `dist/` folder.
+
+### 🍏 For macOS:
+
+Add the following to your `package.json` under the `build` section:
+
+```json
+"mac": {
+  "target": "dmg",
+  "icon": "icon.icns"
+}
+```
+
+Then run:
+
+```bash
+npm run build
+```
+
+📁 Your macOS `.dmg` installer will be available in the `dist/` folder.
 
 ---
 
