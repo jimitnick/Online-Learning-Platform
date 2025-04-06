@@ -1,102 +1,136 @@
-ONLINE LEARNING PLATFORM
+# 🧠 Online Learning Platform
 
-This is a sample Online Learning Platform built using HTML, CSS, JavaScript, and Electron to offer a desktop experience.
+A sample **Online Learning Platform** built using **HTML**, **CSS**, **JavaScript**, and **Electron** to provide a cross-platform desktop experience.
 
-------------------------------------------------------------
-GETTING STARTED
+---
 
-Prerequisites:
-- Node.js (v14 or above recommended): https://nodejs.org/
-- Git: https://git-scm.com/
+## 🚀 Getting Started
 
-------------------------------------------------------------
+### ✅ Prerequisites
 
-Clone the Repository
+Make sure you have the following installed:
 
+- [Node.js (v14 or above)](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+
+---
+
+## 📆 Clone the Repository
+
+```bash
 git clone https://github.com/jimitnick/Online-Learning-Platform.git
 cd Online-Learning-Platform
+```
 
-------------------------------------------------------------
+---
 
-Running the Project
+## 🔤️ Running the Project
 
-1. Navigate to the index folder:
+1. Navigate to the `index` directory:
 
-cd index
+   ```bash
+   cd index
+   ```
 
 2. Install dependencies:
 
-npm install
+   ```bash
+   npm install
+   ```
 
 3. Start the Electron app:
 
-npm start
+   ```bash
+   npm start
+   ```
 
-------------------------------------------------------------
+---
 
-🛠️ Create Electron .exe Installer
+## 🛠️ Create Electron Executable (.exe)
 
-1. Make sure you're in the index directory:
+To create a standalone `.exe` file for Windows:
 
-cd index
+1. Ensure you’re in the `index` directory:
 
-2. Run this command:
+   ```bash
+   cd index
+   ```
 
-npx electron-packager . Online-Learning-Platform --platform=win32 --arch=x64 --icon=icon.ico --overwrite
+2. Run the following command:
 
-This will create a folder like Online-Learning-Platform-win32-x64 with the .exe inside.
+   ```bash
+   npx electron-packager . Online-Learning-Platform --platform=win32 --arch=x64 --icon=icon.ico --overwrite
+   ```
 
-------------------------------------------------------------
+✅ This will generate a folder like `Online-Learning-Platform-win32-x64` with your executable inside.
 
-To Build a Setup .exe Installer
+---
 
-1. Install electron-builder:
+## 📆 Build a Setup Installer (.exe)
 
-npm install --save-dev electron-builder
+To create a complete Windows installer:
 
-2. Update your package.json with a build section:
+1. Install `electron-builder` as a dev dependency:
 
-"scripts": {
-  "start": "electron .",
-  "build": "electron-builder"
-},
-"build": {
-  "appId": "com.eduprep.platform",
-  "productName": "EduPrep",
-  "directories": {
-    "output": "dist"
-  },
-  "files": [
-    "**/*"
-  ],
-  "win": {
-    "target": "nsis",
-    "icon": "icon.ico"
-  },
-  "nsis": {
-    "oneClick": false,
-    "perMachine": true,
-    "allowToChangeInstallationDirectory": true
-  }
-}
+   ```bash
+   npm install --save-dev electron-builder
+   ```
 
-3. Then run:
+2. Update your `package.json`:
 
-npm run build
+   ```json
+   {
+     "name": "online-learning-platform",
+     "version": "1.0.0",
+     "main": "main.js",
+     "scripts": {
+       "start": "electron .",
+       "build": "electron-builder"
+     },
+     "build": {
+       "appId": "com.eduprep.platform",
+       "productName": "EduPrep",
+       "directories": {
+         "output": "dist"
+       },
+       "files": [
+         "**/*"
+       ],
+       "win": {
+         "target": "nsis",
+         "icon": "icon.ico"
+       },
+       "nsis": {
+         "oneClick": false,
+         "perMachine": true,
+         "allowToChangeInstallationDirectory": true
+       }
+     }
+   }
+   ```
 
-Your setup .exe will be in the dist/ folder.
+3. Run the build script:
 
-------------------------------------------------------------
+   ```bash
+   npm run build
+   ```
 
-TECHNOLOGIES USED
+📁 Your `.exe` installer will be available in the `dist/` folder.
 
-- HTML – For the web page structure
-- CSS – For styling and responsiveness
-- JavaScript – For interactivity and logic
-- Electron – To turn the app into a desktop application
+---
 
-------------------------------------------------------------
+## 🛠️ Technologies Used
 
-LICENSE
+- **HTML** – Structure of the platform
+- **CSS** – Styling and responsive design
+- **JavaScript** – Logic and interactivity
+- **Electron** – Desktop application framework
 
-This project is for educational purposes. You are free to use, modify, and enhance it as needed.
+---
+
+## 📄 License
+
+This project is for **educational purposes** only. You are free to use, modify, and enhance it as needed.
+
+---
+
