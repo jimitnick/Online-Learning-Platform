@@ -66,7 +66,6 @@ function updateCalendar() {
     }
 }
 
-// Initial rendering of the calendar
 updateCalendar();
 
 next.addEventListener("click", () => {
@@ -75,7 +74,7 @@ next.addEventListener("click", () => {
         month = 0;
         year++;
     }
-    selectedDate = 1; // Reset selected date to the first of the new month
+    selectedDate = 1;
     updateCalendar();
 });
 
